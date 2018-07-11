@@ -13,6 +13,8 @@
 		CFB18A7020F663CA00B66F32 /* ToDoList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CFB18A6E20F663CA00B66F32 /* ToDoList.xcdatamodeld */; };
 		CFB18A7220F663CB00B66F32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFB18A7120F663CB00B66F32 /* Assets.xcassets */; };
 		CFB18A7520F663CB00B66F32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFB18A7320F663CB00B66F32 /* LaunchScreen.storyboard */; };
+		CFB18A7D20F6691B00B66F32 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB18A7C20F6691B00B66F32 /* CustomCell.swift */; };
+		CFB18A7F20F6764E00B66F32 /* AddVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB18A7E20F6764E00B66F32 /* AddVCViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		CFB18A7120F663CB00B66F32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CFB18A7420F663CB00B66F32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CFB18A7620F663CB00B66F32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFB18A7C20F6691B00B66F32 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		CFB18A7E20F6764E00B66F32 /* AddVCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVCViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,8 @@
 		CFB18A6620F663CA00B66F32 /* ToDoList */ = {
 			isa = PBXGroup;
 			children = (
+				CFB18A7E20F6764E00B66F32 /* AddVCViewController.swift */,
+				CFB18A7C20F6691B00B66F32 /* CustomCell.swift */,
 				CFB18A6720F663CA00B66F32 /* AppDelegate.swift */,
 				CFB18A6920F663CA00B66F32 /* ViewController.swift */,
 				CFB18A6B20F663CA00B66F32 /* Main.storyboard */,
@@ -140,6 +146,8 @@
 			files = (
 				CFB18A6A20F663CA00B66F32 /* ViewController.swift in Sources */,
 				CFB18A7020F663CA00B66F32 /* ToDoList.xcdatamodeld in Sources */,
+				CFB18A7D20F6691B00B66F32 /* CustomCell.swift in Sources */,
+				CFB18A7F20F6764E00B66F32 /* AddVCViewController.swift in Sources */,
 				CFB18A6820F663CA00B66F32 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
