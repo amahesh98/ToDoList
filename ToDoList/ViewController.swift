@@ -32,7 +32,7 @@ class ViewController: UITableViewController {
         let request:NSFetchRequest<Task> = Task.fetchRequest()
         do{
             tableData = try context.fetch(request)
-            tableView.reloadData()
+//            tableView.reloadData()
         }
         catch{
             print("Error")
@@ -70,7 +70,9 @@ class ViewController: UITableViewController {
         newTask.date = source.datePicker.date
         appDelegate.saveContext()
         print("Task successfully added")
-        fetchAll()
+        tableData.append(newTask)
+        tableView.reloadData()
+//        fetchAll()
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if tableData[indexPath.row].completed==false{
@@ -81,7 +83,8 @@ class ViewController: UITableViewController {
         }
         
         appDelegate.saveContext()
-        fetchAll()
+        tableView.reloadData()
+//        fetchAll()
     }
 }
 
