@@ -13,6 +13,7 @@ class ViewController: UITableViewController {
     @IBAction func addPushed(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: "AddSegue", sender: sender)
     }
+    @IBOutlet weak var checkmarkLabel: UILabel!
     var tableData:[Task] = []
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -45,11 +46,19 @@ class ViewController: UITableViewController {
         let currentTask:Task = tableData[indexPath.row]
         cell.titleLabel.text = currentTask.title
         cell.descriptionLabel.text = currentTask.notes
+        if currentTask.completed==true{
+            //show the checkmark
+//            cell.accessoryType = UITableViewCellAccessoryType.checkmark
+            cell.checkmarkLabel.text = "\u{2713}"
+        }
+        else{
+//            cell.accessoryType = .none
+            cell.checkmarkLabel.text = ""
+        }
         let formatter = DateFormatter()
         formatter.dateFormat = "HH:mm a 'on' MM/dd/YY"
         formatter.amSymbol = "AM"
         formatter.pmSymbol = "PM"
-//        cell.dateLabel.text = dateToString(currentTask.date!)
         cell.dateLabel.text = formatter.string(from:currentTask.date!)
         return cell
     }
@@ -61,6 +70,17 @@ class ViewController: UITableViewController {
         newTask.date = source.datePicker.date
         appDelegate.saveContext()
         print("Task successfully added")
+        fetchAll()
+    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if tableData[indexPath.row].completed==false{
+            tableData[indexPath.row].completed = true
+        }
+        else{
+            tableData[indexPath.row].completed = false
+        }
+        
+        appDelegate.saveContext()
         fetchAll()
     }
 }
